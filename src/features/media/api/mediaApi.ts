@@ -41,7 +41,10 @@ export const mediaApi = createApi({
         params: { page },
       }),
     }),
-    getMovieByTitle: builder.query<any, { page?: number; query?: string }>({
+    getMovieByTitle: builder.query<
+      MovieListResponse,
+      { page?: number; query?: string }
+    >({
       query: (params) => ({
         url: `search/movie`,
         params,
