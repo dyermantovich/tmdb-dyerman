@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import type { MovieListResponse } from '@/common/types';
 
 export const mediaApi = createApi({
   reducerPath: 'mediaApi',
@@ -13,20 +14,38 @@ export const mediaApi = createApi({
     },
   }),
   endpoints: (builder) => ({
-    fetchMedia: builder.query<any, void>({
+    fetchMedia: builder.query<MovieListResponse, void>({
       query: () => 'authentication',
     }),
-    getPopularMovies: builder.query<any, void>({
-      query: () => 'movie/popular?language=en-US&page=1',
+    getPopularMovies: builder.query<MovieListResponse, { page: number }>({
+      query: ({ page = 1 }) => ({
+        url: 'movie/popular',
+        params: { page },
+      }),
     }),
-    getTopRatedMovies: builder.query<any, void>({
-      query: () => 'movie/top_rated?language=en-US&page=1',
+    getTopRatedMovies: builder.query<MovieListResponse, { page: number }>({
+      query: ({ page = 1 }) => ({
+        url: 'movie/top_rated',
+        params: { page },
+      }),
     }),
-    getUpcomingMovies: builder.query<any, void>({
-      query: () => 'movie/upcoming?language=en-US&page=1',
+    getUpcomingMovies: builder.query<MovieListResponse, { page: number }>({
+      query: ({ page = 1 }) => ({
+        url: 'movie/upcoming',
+        params: { page },
+      }),
     }),
-    getNowPlayingMovies: builder.query<any, void>({
-      query: () => 'movie/now_playing?language=en-US&page=1',
+    getNowPlayingMovies: builder.query<MovieListResponse, { page: number }>({
+      query: ({ page = 1 }) => ({
+        url: 'movie/now_playing',
+        params: { page },
+      }),
+    }),
+    getMovieByTitle: builder.query<any, { page?: number; query?: string }>({
+      query: (params) => ({
+        url: `search/movie`,
+        params,
+      }),
     }),
   }),
 });
@@ -37,4 +56,5 @@ export const {
   useGetTopRatedMoviesQuery,
   useGetUpcomingMoviesQuery,
   useGetNowPlayingMoviesQuery,
+  useGetMovieByTitleQuery,
 } = mediaApi;

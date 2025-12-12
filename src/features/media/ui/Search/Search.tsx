@@ -1,3 +1,19 @@
+import { FullMovieCategory, SearchInput } from '@/common/components';
+import { useGetMovieByTitleQuery } from '@/features/media/api/mediaApi.ts';
+import { useSearchParams } from 'react-router';
+
 export const Search = () => {
-  return <h1>Search</h1>;
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get('query');
+  return (
+    <div>
+      <SearchInput />
+      {query && (
+        <FullMovieCategory
+          titleName={query}
+          useGetQuery={useGetMovieByTitleQuery}
+        />
+      )}
+    </div>
+  );
 };

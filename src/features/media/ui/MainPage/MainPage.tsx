@@ -1,12 +1,6 @@
-import {
-  useFetchMediaQuery,
-  useGetNowPlayingMoviesQuery,
-  useGetPopularMoviesQuery,
-  useGetTopRatedMoviesQuery,
-  useGetUpcomingMoviesQuery,
-} from '@/features/media/api/mediaApi.ts';
-import { MovieCategory } from '@/common/components/MovieCategory/MovieCategory.tsx';
-import { Path } from '@/common/types';
+import { useFetchMediaQuery } from '@/features/media/api/mediaApi.ts';
+import { PreviewSection } from '@/features/media/ui/MainPage';
+import { SearchInput } from '@/common/components';
 
 export const MainPage = () => {
   const { isLoading } = useFetchMediaQuery();
@@ -17,27 +11,10 @@ export const MainPage = () => {
 
   return (
     <div>
-      <h1>Main Page</h1>
-      <MovieCategory
-        titleName="Popular Movies"
-        useGetQuery={useGetPopularMoviesQuery}
-        path={Path.PopularMovies}
-      />
-      <MovieCategory
-        titleName="Top Rated Movies"
-        useGetQuery={useGetTopRatedMoviesQuery}
-        path={Path.TopRatedMovies}
-      />
-      <MovieCategory
-        titleName="Upcoming Movies"
-        useGetQuery={useGetUpcomingMoviesQuery}
-        path={Path.UpcomingMovies}
-      />
-      <MovieCategory
-        titleName="Now Playing Movies"
-        useGetQuery={useGetNowPlayingMoviesQuery}
-        path={Path.NowPlayingMovies}
-      />
+      <h1>Welcome</h1>
+      <h3>Browse highlighted titles from TMDB</h3>
+      <SearchInput />
+      <PreviewSection />
     </div>
   );
 };
