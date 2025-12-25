@@ -2,7 +2,7 @@ import { CategoryList, ViewMore } from '@/common/components';
 import { type MovieListResponse, Path } from '@/common/types';
 
 type Props = {
-  titleName: string;
+  titleName?: string;
   data: MovieListResponse;
   pageSizeLimit?: number;
   path?: string;

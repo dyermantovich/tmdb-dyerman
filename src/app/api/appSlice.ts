@@ -3,7 +3,9 @@ import { createSlice } from '@reduxjs/toolkit';
 export const appSlice = createSlice({
   name: 'appSlice',
   initialState: {
-    theme: 'dark' as ThemeMode,
+    // theme: 'dark' as ThemeMode,
+    theme: localStorage.getItem('theme') as ThemeMode,
+    status: 'notLiked' as MovieStatus,
   },
   selectors: {
     selectTheme: (state) => state.theme,
@@ -11,6 +13,7 @@ export const appSlice = createSlice({
   reducers: (create) => ({
     changeThemeAC: create.reducer<ThemeMode>((state, action) => {
       state.theme = action.payload;
+      localStorage.setItem('theme', action.payload);
     }),
   }),
 });
@@ -19,3 +22,4 @@ export const { changeThemeAC } = appSlice.actions;
 export const { selectTheme } = appSlice.selectors;
 
 export type ThemeMode = 'dark' | 'light';
+export type MovieStatus = 'notLiked' | 'liked';

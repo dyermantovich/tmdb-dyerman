@@ -1,5 +1,5 @@
 import { FullMovieCategory, SearchInput } from '@/common/components';
-import { useGetMovieByTitleQuery } from '@/features/media/api/mediaApi.ts';
+import { useGetMoviesByTitleQuery } from '@/features/media/api/mediaApi.ts';
 import { useSearchParams } from 'react-router';
 
 export const Search = () => {
@@ -11,7 +11,7 @@ export const Search = () => {
       {query && (
         <FullMovieCategory
           titleName={query}
-          useGetQuery={useGetMovieByTitleQuery}
+          useGetQuery={useGetMoviesByTitleQuery}
         />
       )}
     </div>

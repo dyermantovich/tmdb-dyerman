@@ -1,23 +1,30 @@
 import { useNavigate } from 'react-router';
 import { Path } from '@/common/types';
-import { useRef } from 'react';
+import { type ChangeEvent, useState } from 'react';
 
 export const SearchInput = () => {
-  const titleRef = useRef<HTMLInputElement | null>(null);
-
+  const [inputTitle, setInputTitle] = useState('');
   const navigate = useNavigate();
 
+  const changeTitleHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    setInputTitle(e.currentTarget.value);
+  };
+
   const searchForAMovieHandler = () => {
-    const title = titleRef.current?.value.trim();
-    if (title) {
-      navigate(`${Path.Search}?query=${title}`);
-    }
+    navigate(`${Path.Search}?query=${inputTitle}`);
   };
 
   return (
     <div>
-      <input ref={titleRef} type="search" placeholder="Search for a movie" />
-      <button onClick={searchForAMovieHandler}>Search</button>
+      <input
+        value={inputTitle}
+        onChange={(e) => changeTitleHandler(e)}
+        type="search"
+        placeholder="Search for a movie"
+      />
+      <button onClick={searchForAMovieHandler} disabled={!inputTitle.trim()}>
+        Search
+      </button>
     </div>
   );
 };

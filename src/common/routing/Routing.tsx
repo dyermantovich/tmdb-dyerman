@@ -13,6 +13,7 @@ import {
   TopRatedMovies,
   UpcomingMovies,
 } from '@/features/media/ui/MovieCategoryPage';
+import { FullMovieCard } from '@/common/components';
 
 export const Routing = () => (
   <Routes>
@@ -26,5 +27,6 @@ export const Routing = () => (
     <Route path={Path.FilteredMovies} element={<FilteredMovies />} />
     <Route path={Path.Favorites} element={<Favorites />} />
     <Route path={Path.Search} element={<Search />} />
+    <Route path={`/${Path.CategoryMovies}/:id`} element={<FullMovieCard />} />
   </Routes>
 );

@@ -2,7 +2,7 @@ import { MovieCategory } from '@/common/components';
 
 type Props = {
   titleName: string;
-  useGetQuery: (page: number) => any;
+  useGetQuery: (params: { page: number }) => any;
   path: string;
 };
 
@@ -13,7 +13,7 @@ export const PreviewMovieCategory = ({
 }: Props) => {
   const pageSizeLimit = 6;
 
-  const { data, isLoading } = useGetQuery(1);
+  const { data, isLoading } = useGetQuery({ page: 1 });
 
   if (isLoading) {
     return <h1>Loading...</h1>;

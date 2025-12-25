@@ -1,33 +1,15 @@
 import { PreviewMovieCategory } from '@/common/components';
-import {
-  useGetNowPlayingMoviesQuery,
-  useGetPopularMoviesQuery,
-  useGetTopRatedMoviesQuery,
-  useGetUpcomingMoviesQuery,
-} from '@/features/media/api/mediaApi.ts';
-import { Path } from '@/common/types';
+import { previewSectionData } from '@/features/media/ui/MainPage/PreviewSection/previewSectionData.ts';
 
 export const PreviewSection = () => (
-  <>
-    <PreviewMovieCategory
-      titleName="Popular Movies"
-      useGetQuery={useGetPopularMoviesQuery}
-      path={Path.PopularMovies}
-    />
-    <PreviewMovieCategory
-      titleName="Top Rated Movies"
-      useGetQuery={useGetTopRatedMoviesQuery}
-      path={Path.TopRatedMovies}
-    />
-    <PreviewMovieCategory
-      titleName="Upcoming Movies"
-      useGetQuery={useGetUpcomingMoviesQuery}
-      path={Path.UpcomingMovies}
-    />
-    <PreviewMovieCategory
-      titleName="Now Playing Movies"
-      useGetQuery={useGetNowPlayingMoviesQuery}
-      path={Path.NowPlayingMovies}
-    />
-  </>
+  <div>
+    {previewSectionData.map((movieCategory, index) => (
+      <PreviewMovieCategory
+        key={index}
+        titleName={movieCategory.titleName}
+        useGetQuery={movieCategory.useGetQuery}
+        path={movieCategory.path}
+      />
+    ))}
+  </div>
 );
