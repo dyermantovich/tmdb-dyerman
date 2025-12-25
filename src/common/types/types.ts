@@ -68,7 +68,7 @@ export type MovieResponse = MovieBase & {
 export type MovieListParams = {
   query?: string;
   page?: number;
-  sort_by?: SortBy;
+  sort_by?: SortByValues;
   minRating?: number;
   maxRating?: number;
   genres?: string;
