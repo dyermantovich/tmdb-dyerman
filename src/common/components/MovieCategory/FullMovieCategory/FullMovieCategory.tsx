@@ -40,7 +40,7 @@ export const FullMovieCategory = ({ titleName, useGetQuery, args }: Props) => {
       <MovieCategory titleName={titleName} data={data} />
       <Pagination
         currentPage={page}
-        totalPages={data.total_pages}
+        totalPages={data?.total_pages}
         onPageChange={handlePageChange}
       />
     </div>

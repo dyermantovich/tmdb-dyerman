@@ -2,4 +2,17 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  --color-primary: #0f766e;
+  --color-secondary: #db2777;
+  --color-bg-default: #f7fafa;
+  --color-text-primary: #0b1220;
+  --color-button-text: #f7fafa;
+}
+
+:root[data-theme='dark'] {
+  --color-primary: #2dd4bf;
+  --color-secondary: #f472b6;
+  --color-bg-default: #061418;
+  --color-text-primary: #e6f6f5;
+  --color-button-text: #061418;
 }

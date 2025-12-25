@@ -1,5 +1,6 @@
 import { PreviewMovieCard } from '@/common/components';
 import { type MovieListResponse } from '@/common/types';
+import s from './CategoryList.module.css';
 
 type Props = {
   data: MovieListResponse;
@@ -12,7 +13,7 @@ export const CategoryList = ({ data, pageSizeLimit }: Props) => {
     : data.results;
 
   return (
-    <div>
+    <div className={s.list}>
       {movies.map((movie) => (
         <PreviewMovieCard
           key={movie.id}

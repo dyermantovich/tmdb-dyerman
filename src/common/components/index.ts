@@ -3,7 +3,7 @@ export { MovieCategory } from './MovieCategory/MovieCategory.tsx';
 export { FullMovieCategory } from './MovieCategory/FullMovieCategory/FullMovieCategory.tsx';
 export { PreviewMovieCategory } from './MovieCategory/PreviewMovieCategory/PreviewMovieCategory.tsx';
 export { CategoryList } from './MovieCategory/CategoryList/CategoryList.tsx';
-export { PreviewMovieCard } from './MovieCategory/CategoryList/MovieCard/MovieCardPreview/PreviewMovieCard.tsx';
+export { PreviewMovieCard } from '@/common/components/MovieCategory/CategoryList/MovieCard/PreviewMovieCard/PreviewMovieCard.tsx';
 export { FullMovieCard } from './MovieCategory/CategoryList/MovieCard/FullMovieCard/FullMovieCard.tsx';
 export { Pagination } from './Pagination/Pagination.tsx';
 export { SearchInput } from './SearchInput/SearchInput.tsx';

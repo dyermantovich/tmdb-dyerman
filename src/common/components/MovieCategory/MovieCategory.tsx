@@ -1,5 +1,6 @@
 import { CategoryList, ViewMore } from '@/common/components';
 import { type MovieListResponse, Path } from '@/common/types';
+import s from './MovieCategory.module.css';
 
 type Props = {
   titleName?: string;
@@ -14,9 +15,9 @@ export const MovieCategory = ({
   pageSizeLimit,
   path,
 }: Props) => (
-  <div>
-    <div>
-      <h3>{titleName}</h3>
+  <div className={s.root}>
+    <div className={s.header}>
+      <h3 className={s.title}>{titleName}</h3>
       {pageSizeLimit && <ViewMore path={`${Path.CategoryMovies}/${path}`} />}
     </div>
     <CategoryList data={data} pageSizeLimit={pageSizeLimit} />
