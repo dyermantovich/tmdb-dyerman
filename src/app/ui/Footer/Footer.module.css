@@ -1,0 +1,14 @@
+.footer {
+  margin-top: auto;
+  padding: 20px 24px;
+  border-top: 1px solid rgba(15, 118, 110, 0.2);
+  color: var(--color-text-primary);
+  background: var(--color-bg-default);
+  text-align: center;
+}
+
+.text {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary, #334155);
+}

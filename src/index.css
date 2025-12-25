@@ -6,6 +6,7 @@
   --color-secondary: #db2777;
   --color-bg-default: #f7fafa;
   --color-text-primary: #0b1220;
+  --color-text-secondary: #334155;
   --color-button-text: #f7fafa;
 }
 
@@ -14,5 +15,6 @@
   --color-secondary: #f472b6;
   --color-bg-default: #061418;
   --color-text-primary: #e6f6f5;
+  --color-text-secondary: #9fb7b6;
   --color-button-text: #061418;
 }

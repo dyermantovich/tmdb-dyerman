@@ -17,7 +17,7 @@ export const App = () => {
   return (
     <ThemeProvider theme={themeMode === 'dark' ? darkTheme : lightTheme}>
       <CssBaseline />
-      <div>
+      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <Header />
         <Routing />
         <Footer />
