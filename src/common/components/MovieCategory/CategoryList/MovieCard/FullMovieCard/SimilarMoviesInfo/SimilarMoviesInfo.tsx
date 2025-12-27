@@ -2,6 +2,7 @@ import { PreviewMovieCard } from '@/common/components';
 import { useGetSimilarMoviesByMovieIdQuery } from '@/features/media/api/mediaApi.ts';
 import { useParams } from 'react-router';
 import { skipToken } from '@reduxjs/toolkit/query';
+import s from './SimilarMoviesInfo.module.css';
 
 export const SimilarMoviesInfo = () => {
   const { id } = useParams();
@@ -15,16 +16,19 @@ export const SimilarMoviesInfo = () => {
   }
 
   return (
-    <div>
-      {data?.results.slice(0, 6).map((movie) => (
-        <PreviewMovieCard
-          key={movie.id}
-          id={movie.id}
-          title={movie.title}
-          imagePath={movie.poster_path || ''}
-          rating={Number(movie.vote_average)}
-        />
-      ))}
-    </div>
+    <section className={s.section}>
+      <h3 className={s.title}>Similar Movies</h3>
+      <div className={s.list}>
+        {data?.results.slice(0, 6).map((movie) => (
+          <PreviewMovieCard
+            key={movie.id}
+            id={movie.id}
+            title={movie.title}
+            imagePath={movie.poster_path || ''}
+            rating={Number(movie.vote_average)}
+          />
+        ))}
+      </div>
+    </section>
   );
 };

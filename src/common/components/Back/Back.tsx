@@ -1,7 +1,12 @@
 import { useNavigate } from 'react-router';
+import s from './Back.module.css';
 
 export const Back = () => {
   const navigate = useNavigate();
 
-  return <button onClick={() => navigate(-1)}>Go back</button>;
+  return (
+    <button className={s.button} onClick={() => navigate(-1)}>
+      Back
+    </button>
+  );
 };

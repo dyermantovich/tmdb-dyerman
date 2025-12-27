@@ -1,6 +1,7 @@
 import { useGetCastByMovieIdQuery } from '@/features/media/api/mediaApi.ts';
 import { useParams } from 'react-router';
 import { skipToken } from '@reduxjs/toolkit/query';
+import s from './CastInfo.module.css';
 
 export const CastInfo = () => {
   const { id } = useParams();
@@ -12,20 +13,21 @@ export const CastInfo = () => {
   }
 
   return (
-    <div>
-      <h4>Cast:</h4>
-      <ul>
+    <section className={s.section}>
+      <h3 className={s.title}>Cast</h3>
+      <ul className={s.list}>
         {data?.cast.slice(0, 6).map((person) => (
-          <li key={person.id}>
+          <li className={s.card} key={person.id}>
             <img
+              className={s.avatar}
               src={`https://image.tmdb.org/t/p/w200/${person.profile_path}`}
               alt={person.name}
             />
-            <p>{person.name}</p>
-            <p>{person.character}</p>
+            <p className={s.name}>{person.name}</p>
+            <p className={s.role}>{person.character}</p>
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };

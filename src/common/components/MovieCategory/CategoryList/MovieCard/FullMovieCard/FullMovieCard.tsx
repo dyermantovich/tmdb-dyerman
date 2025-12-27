@@ -4,14 +4,17 @@ import {
   MovieInfo,
   SimilarMoviesInfo,
 } from '@/common/components';
+import s from './FullMovieCard.module.css';
 
 export const FullMovieCard = () => {
   return (
-    <div>
-      <Back />
+    <section className={s.page}>
+      <div className={s.topRow}>
+        <Back />
+      </div>
       <MovieInfo />
       <CastInfo />
       <SimilarMoviesInfo />
-    </div>
+    </section>
   );
 };
