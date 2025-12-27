@@ -18,3 +18,18 @@
   --color-text-secondary: #9fb7b6;
   --color-button-text: #061418;
 }
+
+.appContainer {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@media (max-width: 720px) {
+  .appContainer {
+    padding: 0 16px;
+  }
+}

@@ -18,9 +18,11 @@ export const App = () => {
     <ThemeProvider theme={themeMode === 'dark' ? darkTheme : lightTheme}>
       <CssBaseline />
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-        <Header />
-        <Routing />
-        <Footer />
+        <div className="appContainer">
+          <Header />
+          <Routing />
+          <Footer />
+        </div>
       </div>
     </ThemeProvider>
   );
