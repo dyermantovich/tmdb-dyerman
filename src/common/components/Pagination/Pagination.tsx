@@ -1,3 +1,5 @@
+import s from './Pagination.module.css';
+
 type Props = {
   currentPage: number;
   totalPages: number;
@@ -39,15 +41,21 @@ export const Pagination = ({
   };
 
   return (
-    <div>
+    <div className={s.pagination}>
       {getPages().map((page, index) =>
         page === 'dots' ? (
-          <span key={index}> ... </span>
+          <span className={s.dots} key={index}>
+            ...
+          </span>
         ) : (
           <button
             key={index}
             disabled={page === currentPage}
+            className={`${s.pageButton} ${
+              page === currentPage ? s.active : ''
+            }`}
             onClick={() => onPageChange(page)}
+            aria-current={page === currentPage ? 'page' : undefined}
           >
             {page}
           </button>
