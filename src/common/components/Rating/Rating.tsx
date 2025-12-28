@@ -1,4 +1,5 @@
 import { type ChangeEvent, type Dispatch, type SetStateAction } from 'react';
+import s from './Rating.module.css';
 
 type Props = {
   minValue: number;
@@ -28,9 +29,9 @@ export const Rating = ({
   };
 
   return (
-    <div>
-      <h4>Rating: </h4>
-      <div>
+    <div className={s.rating}>
+      <h4 className={s.title}>Rating</h4>
+      <div className={s.value}>
         {minValue.toFixed(1)} - {maxValue.toFixed(1)}
       </div>
       <input
@@ -40,6 +41,7 @@ export const Rating = ({
         step={0.1}
         value={minValue}
         onChange={changeMinValueHandler}
+        className={s.range}
       />
       <input
         type="range"
@@ -48,6 +50,7 @@ export const Rating = ({
         step={0.1}
         value={maxValue}
         onChange={changeMaxValueHandler}
+        className={s.range}
       />
     </div>
   );

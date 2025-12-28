@@ -1,0 +1,36 @@
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.genreButton {
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--color-primary), transparent 70%);
+  background: color-mix(in srgb, var(--color-bg-default), transparent 8%);
+  color: var(--color-text-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition:
+    transform 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    color 160ms ease;
+}
+
+.genreButton:hover {
+  background: color-mix(in srgb, var(--color-primary), transparent 15%);
+  border-color: var(--color-primary);
+  color: var(--color-button-text);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+}
+
+.genreButton[data-selected='true'] {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-button-text);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+}

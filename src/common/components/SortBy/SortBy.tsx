@@ -1,5 +1,6 @@
 import { type ChangeEvent, type Dispatch, type SetStateAction } from 'react';
 import type { SortByValues } from '@/common/types';
+import s from './SortBy.module.css';
 
 type Props = {
   sortBy: SortByValues;
@@ -12,10 +13,14 @@ export const SortBy = ({ sortBy, setSortBy }: Props) => {
   };
 
   return (
-    <div>
-      <h4>Sort by</h4>
+    <div className={s.sortBy}>
+      <h4 className={s.title}>Sort by</h4>
       <label>
-        <select value={sortBy} onChange={(e) => changeFilterHandler(e)}>
+        <select
+          className={s.select}
+          value={sortBy}
+          onChange={(e) => changeFilterHandler(e)}
+        >
           <option value="popularity.desc">Popularity ↓</option>
           <option value="popularity.asc">Popularity ↑</option>
           <option value="vote_average.desc">Rating ↓</option>

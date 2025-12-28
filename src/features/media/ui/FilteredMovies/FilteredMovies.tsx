@@ -2,6 +2,7 @@ import { useGetMovieUsingFilterQuery } from '@/features/media/api/mediaApi.ts';
 import { FullMovieCategory, SortBy, Rating, Genres } from '@/common/components';
 import { useState } from 'react';
 import type { SortByValues } from '@/common/types';
+import s from './FilteredMovies.module.css';
 
 export const FilteredMovies = () => {
   const [genres, setGenres] = useState<number[]>([]);
@@ -17,28 +18,38 @@ export const FilteredMovies = () => {
   };
 
   return (
-    <div>
-      <div>
-        <h3>Filters / Sort</h3>
-        <SortBy sortBy={sortBy} setSortBy={setSortBy} />
-        <Rating
-          minValue={minValue}
-          maxValue={maxValue}
-          setMinValue={setMinValue}
-          setMaxValue={setMaxValue}
-        />
-        <Genres setGenres={setGenres} />
-        <button onClick={resetFiltersHandler}>Reset filters</button>
+    <div className={s.layout}>
+      <div className={s.panel}>
+        <h3 className={s.title}>Filters / Sort</h3>
+        <div className={s.control}>
+          <SortBy sortBy={sortBy} setSortBy={setSortBy} />
+        </div>
+        <div className={s.control}>
+          <Rating
+            minValue={minValue}
+            maxValue={maxValue}
+            setMinValue={setMinValue}
+            setMaxValue={setMaxValue}
+          />
+        </div>
+        <div className={s.control}>
+          <Genres setGenres={setGenres} selectedGenres={genres} />
+        </div>
+        <button className={s.resetButton} onClick={resetFiltersHandler}>
+          Reset filters
+        </button>
       </div>
-      <FullMovieCategory
-        useGetQuery={useGetMovieUsingFilterQuery}
-        args={{
-          sort_by: sortBy,
-          minRating: minValue,
-          maxRating: maxValue,
-          genres: genres.join(','),
-        }}
-      />
+      <div className={s.content}>
+        <FullMovieCategory
+          useGetQuery={useGetMovieUsingFilterQuery}
+          args={{
+            sort_by: sortBy,
+            minRating: minValue,
+            maxRating: maxValue,
+            genres: genres.join(','),
+          }}
+        />
+      </div>
     </div>
   );
 };

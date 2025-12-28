@@ -1,0 +1,31 @@
+.sortBy {
+  display: grid;
+  gap: 10px;
+}
+
+.title {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--color-primary), transparent 60%);
+  background: color-mix(in srgb, var(--color-bg-default), transparent 5%);
+  color: var(--color-text-primary);
+  font-weight: 600;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary), transparent 75%);
+}

@@ -1,0 +1,25 @@
+.rating {
+  display: grid;
+  gap: 8px;
+}
+
+.title {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.value {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.range {
+  width: 100%;
+  accent-color: var(--color-primary);
+}
