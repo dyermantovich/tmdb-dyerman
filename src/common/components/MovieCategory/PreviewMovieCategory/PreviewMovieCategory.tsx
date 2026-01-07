@@ -12,7 +12,7 @@ export const PreviewMovieCategory = ({
   useGetQuery,
   path,
 }: Props) => {
-  const pageSizeLimit = 6;
+  const pageSizeLimit = 5;
 
   const { data, isLoading } = useGetQuery({ page: 1 });
 
