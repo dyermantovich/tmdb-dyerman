@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router';
+import { Navigate, Route, Routes } from 'react-router';
 import { Path } from '@/common/types';
 import {
   MovieCategoryPage,
@@ -19,6 +19,7 @@ export const Routing = () => (
   <Routes>
     <Route path={Path.Main} element={<MainPage />} />
     <Route path={Path.CategoryMovies} element={<MovieCategoryPage />}>
+      <Route index element={<Navigate to={Path.PopularMovies} replace />} />
       <Route path={Path.PopularMovies} element={<PopularMovies />} />
       <Route path={Path.TopRatedMovies} element={<TopRatedMovies />} />
       <Route path={Path.UpcomingMovies} element={<UpcomingMovies />} />
