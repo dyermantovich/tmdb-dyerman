@@ -1,4 +1,6 @@
-import { type ChangeEvent, type Dispatch, type SetStateAction } from 'react';
+import { type Dispatch, type SetStateAction } from 'react';
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
 import s from './Rating.module.css';
 
 type Props = {
@@ -14,17 +16,14 @@ export const Rating = ({
   setMinValue,
   setMaxValue,
 }: Props) => {
-  const changeMinValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = Number(e.target.value);
-    if (value <= maxValue) {
-      setMinValue(value);
+  const changeRangeHandler = (value: number | number[]) => {
+    if (!Array.isArray(value)) {
+      return;
     }
-  };
-
-  const changeMaxValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = Number(e.target.value);
-    if (value >= minValue) {
-      setMaxValue(value);
+    const [nextMin, nextMax] = value;
+    if (nextMin <= nextMax) {
+      setMinValue(nextMin);
+      setMaxValue(nextMax);
     }
   };
 
@@ -34,23 +33,14 @@ export const Rating = ({
       <div className={s.value}>
         {minValue.toFixed(1)} - {maxValue.toFixed(1)}
       </div>
-      <input
-        type="range"
+      <Slider
+        range
         min={0}
         max={10}
         step={0.1}
-        value={minValue}
-        onChange={changeMinValueHandler}
-        className={s.range}
-      />
-      <input
-        type="range"
-        min={0}
-        max={10}
-        step={0.1}
-        value={maxValue}
-        onChange={changeMaxValueHandler}
-        className={s.range}
+        value={[minValue, maxValue]}
+        onChange={changeRangeHandler}
+        className={s.slider}
       />
     </div>
   );
