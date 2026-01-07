@@ -1,6 +1,5 @@
 import { useFetchMediaQuery } from '@/features/media/api/mediaApi.ts';
-import { PreviewSection } from '@/features/media/ui/MainPage';
-import { SearchInput } from '@/common/components';
+import { HeroSection, PreviewSection } from '@/features/media/ui/MainPage';
 
 export const MainPage = () => {
   const { isLoading } = useFetchMediaQuery();
@@ -11,9 +10,7 @@ export const MainPage = () => {
 
   return (
     <div>
-      <h1>Welcome</h1>
-      <h3>Browse highlighted titles from TMDB</h3>
-      <SearchInput />
+      <HeroSection />
       <PreviewSection />
     </div>
   );
