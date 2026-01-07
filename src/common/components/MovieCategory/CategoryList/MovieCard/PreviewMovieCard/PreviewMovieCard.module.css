@@ -18,7 +18,7 @@
   display: block;
   width: 100%;
   height: auto;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 10px 24px var(--color-shadow-18);
   transition: transform 180ms ease;
   transform-origin: center;
 }
@@ -36,8 +36,8 @@
 
 .favorite button {
   border: 0;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
+  background: var(--color-overlay-60);
+  color: var(--color-text-inverse);
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -67,7 +67,7 @@
   font-weight: 700;
   line-height: 1;
   border-radius: 50%;
-  color: #111;
+  color: var(--color-text-primary);
 }
 
 .title {
@@ -81,13 +81,13 @@
 }
 
 .ratingGreat {
-  background: #2ecc71;
+  background: var(--color-status-success);
 }
 
 .ratingNormal {
-  background: #f39c12;
+  background: var(--color-status-warning);
 }
 
 .ratingBad {
-  background: #e74c3c;
+  background: var(--color-status-error);
 }

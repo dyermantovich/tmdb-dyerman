@@ -11,7 +11,7 @@
   position: relative;
   z-index: 1;
   max-width: 640px;
-  color: #f7fafa;
+  color: var(--color-text-inverse);
   text-transform: uppercase;
 }
 
@@ -26,5 +26,5 @@
   font-size: clamp(1rem, 2vw, 1.6rem);
   font-weight: 500;
   text-transform: none;
-  color: rgba(247, 250, 250, 0.9);
+  color: var(--color-text-inverse-muted);
 }

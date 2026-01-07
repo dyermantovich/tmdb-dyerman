@@ -18,7 +18,7 @@
 .button:hover {
   background: var(--color-secondary);
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 16px var(--color-shadow-20);
 }
 
 .button:active {

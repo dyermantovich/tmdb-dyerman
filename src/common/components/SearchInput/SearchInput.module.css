@@ -5,8 +5,8 @@
   width: min(640px, 100%);
   padding: 8px 10px;
   border-radius: 16px;
-  background: rgba(15, 118, 110, 0.06);
-  border: 1px solid rgba(15, 118, 110, 0.18);
+  background: var(--color-primary-ghost);
+  border: 1px solid var(--color-primary-border-soft);
 }
 
 .field {
@@ -17,7 +17,7 @@
   gap: 10px;
   padding: 10px 12px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--color-surface-muted);
   transition:
     box-shadow 160ms ease,
     background 160ms ease;
@@ -53,8 +53,8 @@
 }
 
 .field:focus-within {
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.18);
+  background: var(--color-surface);
+  box-shadow: 0 0 0 3px var(--color-primary-ring);
 }
 
 .button {
@@ -78,7 +78,7 @@
 .button:hover:not(:disabled) {
   background: var(--color-secondary);
   transform: translateY(-1px);
-  box-shadow: 0 8px 16px rgba(11, 18, 32, 0.16);
+  box-shadow: 0 8px 16px var(--color-shadow-ink-16);
 }
 
 .button:active:not(:disabled) {
@@ -101,20 +101,6 @@
   .button {
     width: 100%;
   }
-}
-
-:global([data-theme='dark']) .wrapper {
-  background: rgba(45, 212, 191, 0.1);
-  border: 1px solid rgba(45, 212, 191, 0.25);
-}
-
-:global([data-theme='dark']) .field {
-  background: rgba(11, 31, 36, 0.85);
-}
-
-:global([data-theme='dark']) .field:focus-within {
-  background: rgba(11, 31, 36, 1);
-  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.25);
 }
 
 :global([data-theme='dark']) .icon {

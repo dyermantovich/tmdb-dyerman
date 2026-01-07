@@ -22,8 +22,8 @@
   inset: 0;
   background: linear-gradient(
     120deg,
-    rgba(6, 12, 18, 0.78) 0%,
-    rgba(6, 12, 18, 0.45) 45%,
-    rgba(6, 12, 18, 0.2) 100%
+    var(--color-overlay-78) 0%,
+    var(--color-overlay-45) 45%,
+    var(--color-overlay-20) 100%
   );
 }
