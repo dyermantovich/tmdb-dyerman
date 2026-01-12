@@ -7,6 +7,7 @@ type Props = {
   data: MovieListResponse;
   pageSizeLimit?: number;
   path?: string;
+  columns?: number;
 };
 
 export const MovieCategory = ({
@@ -14,12 +15,17 @@ export const MovieCategory = ({
   data,
   pageSizeLimit,
   path,
+  columns,
 }: Props) => (
   <div className={s.root}>
     <div className={s.header}>
       <h3 className={s.title}>{titleName}</h3>
       {pageSizeLimit && <ViewMore path={`${Path.CategoryMovies}/${path}`} />}
     </div>
-    <CategoryList data={data} pageSizeLimit={pageSizeLimit} />
+    <CategoryList
+      data={data}
+      pageSizeLimit={pageSizeLimit}
+      columns={columns}
+    />
   </div>
 );

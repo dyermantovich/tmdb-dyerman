@@ -5,15 +5,19 @@ import s from './CategoryList.module.css';
 type Props = {
   data: MovieListResponse;
   pageSizeLimit?: number;
+  columns?: number;
 };
 
-export const CategoryList = ({ data, pageSizeLimit }: Props) => {
+export const CategoryList = ({ data, pageSizeLimit, columns }: Props) => {
   const movies = pageSizeLimit
     ? data.results.slice(0, pageSizeLimit)
     : data.results;
+  const gridTemplateColumns = columns
+    ? `repeat(${columns}, minmax(0, 1fr))`
+    : undefined;
 
   return (
-    <div className={s.list}>
+    <div className={s.list} style={{ gridTemplateColumns }}>
       {movies.map((movie) => (
         <PreviewMovieCard
           key={movie.id}
