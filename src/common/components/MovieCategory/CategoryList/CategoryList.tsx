@@ -19,7 +19,11 @@ export const CategoryList = ({ data, pageSizeLimit }: Props) => {
           key={movie.id}
           id={movie.id}
           title={movie.title}
-          imagePath={movie.poster_path || ''}
+          imagePath={
+            movie.poster_path
+              ? `https://image.tmdb.org/t/p/w200/${movie.poster_path}`
+              : 'https://placehold.co/217x312/344363/FFF?text=No+poster'
+          }
           rating={movie.vote_average}
         />
       ))}

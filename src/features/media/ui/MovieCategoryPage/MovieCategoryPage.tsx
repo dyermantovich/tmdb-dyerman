@@ -4,12 +4,7 @@ import s from './MovieCategoryPage.module.css';
 
 export const MovieCategoryPage = () => (
   <section className={s.page}>
-    <div className={s.header}>
-      <h2 className={s.title}>Category Movies</h2>
-      <p className={s.subtitle}>
-        Discover what’s trending, top rated, and upcoming.
-      </p>
-    </div>
+    <div className={s.header}></div>
     <nav className={s.nav}>
       <NavLink className={s.link} to={Path.PopularMovies}>
         Popular Movies

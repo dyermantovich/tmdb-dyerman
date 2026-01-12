@@ -19,12 +19,16 @@ export const SimilarMoviesInfo = () => {
     <section className={s.section}>
       <h3 className={s.title}>Similar Movies</h3>
       <div className={s.list}>
-        {data?.results.slice(0, 6).map((movie) => (
+        {data?.results.slice(0, 5).map((movie) => (
           <PreviewMovieCard
             key={movie.id}
             id={movie.id}
             title={movie.title}
-            imagePath={movie.poster_path || ''}
+            imagePath={
+              movie.poster_path
+                ? `https://image.tmdb.org/t/p/w200/${movie.poster_path}`
+                : 'https://placehold.co/217x312/344363/FFF?text=No+poster'
+            }
             rating={Number(movie.vote_average)}
           />
         ))}

@@ -35,14 +35,17 @@ export const FullMovieCategory = ({ titleName, useGetQuery, args }: Props) => {
     return <h1>Loading...</h1>;
   }
 
-  return (
-    <div>
-      <MovieCategory titleName={titleName} data={data} />
-      <Pagination
-        currentPage={page}
-        totalPages={data?.total_pages}
-        onPageChange={handlePageChange}
-      />
-    </div>
-  );
+  if (data.results.length) {
+    return (
+      <div>
+        <MovieCategory titleName={titleName} data={data} />
+        <Pagination
+          currentPage={page}
+          totalPages={data?.total_pages}
+          onPageChange={handlePageChange}
+        />
+      </div>
+    );
+  }
+  return <div>{`No matches found for "${query}".`}</div>;
 };

@@ -10,7 +10,7 @@ export const Search = () => {
       <SearchInput />
       {query && (
         <FullMovieCategory
-          titleName={query}
+          titleName={`Results for "${query}"`}
           useGetQuery={useGetMoviesByTitleQuery}
         />
       )}

@@ -1,11 +1,12 @@
 import { PreviewMovieCard } from '@/common/components';
 import type { FavoriteType } from '@/common/types';
+import s from './Favorites.module.css';
 
 export const Favorites = () => {
   const favorites = JSON.parse(localStorage.getItem('favorite') ?? '[]');
 
   return (
-    <div>
+    <div className={s.list}>
       {favorites.map((movie: FavoriteType) => (
         <PreviewMovieCard
           key={movie.id}
