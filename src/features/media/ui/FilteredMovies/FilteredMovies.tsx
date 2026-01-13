@@ -1,8 +1,9 @@
 import { useGetMovieUsingFilterQuery } from '@/features/media/api/mediaApi.ts';
-import { FullMovieCategory, SortBy, Rating, Genres } from '@/common/components';
+import { SortBy, Rating } from '@/common/components';
 import { useState } from 'react';
 import type { SortByValues } from '@/common/types';
 import s from './FilteredMovies.module.css';
+import { FullMovieCategory, Genres } from '@/features/media/ui';
 
 export const FilteredMovies = () => {
   const [genres, setGenres] = useState<number[]>([]);

@@ -76,6 +76,10 @@
   min-height: 100vh;
 }
 
+.appLoader {
+  min-height: 4px;
+}
+
 @media (max-width: 720px) {
   .appContainer {
     padding: 0 16px;

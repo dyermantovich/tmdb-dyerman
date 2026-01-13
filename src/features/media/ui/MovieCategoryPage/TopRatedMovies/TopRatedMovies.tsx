@@ -1,5 +1,5 @@
 import { useGetTopRatedMoviesQuery } from '@/features/media/api/mediaApi.ts';
-import { FullMovieCategory } from '@/common/components';
+import { FullMovieCategory } from '@/features/media/ui';
 
 export const TopRatedMovies = () => (
   <FullMovieCategory

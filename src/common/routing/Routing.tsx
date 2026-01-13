@@ -6,6 +6,7 @@ import {
   FilteredMovies,
   MainPage,
   Search,
+  FullMovieCard,
 } from '@/features/media/ui';
 import {
   NowPlayingMovies,
@@ -13,7 +14,7 @@ import {
   TopRatedMovies,
   UpcomingMovies,
 } from '@/features/media/ui/MovieCategoryPage';
-import { FullMovieCard } from '@/common/components';
+import { ErrorPage } from '@/app/ui';
 
 export const Routing = () => (
   <Routes>
@@ -29,5 +30,6 @@ export const Routing = () => (
     <Route path={Path.Favorites} element={<Favorites />} />
     <Route path={Path.Search} element={<Search />} />
     <Route path={`/${Path.CategoryMovies}/:id`} element={<FullMovieCard />} />
+    <Route path="*" element={<ErrorPage />} />
   </Routes>
 );

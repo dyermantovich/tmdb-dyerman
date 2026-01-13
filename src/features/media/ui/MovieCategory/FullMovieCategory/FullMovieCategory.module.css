@@ -1,0 +1,37 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.headerSkeleton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.listSkeleton {
+  padding-top: 10px;
+  padding-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+  justify-items: stretch;
+}
+
+.cardSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.paginationSkeleton {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px 0 8px;
+}

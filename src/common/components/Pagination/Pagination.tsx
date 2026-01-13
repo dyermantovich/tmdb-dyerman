@@ -13,13 +13,12 @@ export const Pagination = ({
 }: Props) => {
   const getPages = () => {
     const pages: (number | 'dots')[] = [];
+    const start = Math.max(2, currentPage - 1);
+    const end = Math.min(currentPage + 1, totalPages - 1);
 
     if (totalPages > 1) {
       pages.push(1);
     }
-
-    const start = Math.max(2, currentPage - 1);
-    const end = Math.min(currentPage + 1, totalPages - 1);
 
     if (start > 2) {
       pages.push('dots');

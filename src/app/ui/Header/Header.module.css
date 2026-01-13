@@ -1,8 +1,8 @@
 .header {
   top: 0;
   z-index: 10;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 16px;
   padding: 16px 24px;
@@ -18,7 +18,7 @@
 .nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 15px;
   align-items: center;
 }
 

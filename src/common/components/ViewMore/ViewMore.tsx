@@ -5,10 +5,8 @@ type Props = {
   path: string;
 };
 
-export const ViewMore = ({ path }: Props) => {
-  return (
-    <NavLink className={s.button} to={path}>
-      View More
-    </NavLink>
-  );
-};
+export const ViewMore = ({ path }: Props) => (
+  <NavLink className={s.button} to={path}>
+    View More
+  </NavLink>
+);

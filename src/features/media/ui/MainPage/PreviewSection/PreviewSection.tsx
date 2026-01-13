@@ -1,5 +1,5 @@
-import { PreviewMovieCategory } from '@/common/components';
 import { previewSectionData } from '@/features/media/ui/MainPage/PreviewSection/previewSectionData.ts';
+import { PreviewMovieCategory } from '@/features/media/ui';
 
 export const PreviewSection = () => (
   <div>

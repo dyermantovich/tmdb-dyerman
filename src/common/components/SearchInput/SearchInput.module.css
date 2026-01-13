@@ -23,18 +23,27 @@
     background 160ms ease;
 }
 
-.icon {
+.iconWrapper {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 20px;
   height: 20px;
-  color: var(--color-primary);
 }
 
-.icon svg {
+.icon {
   width: 18px;
   height: 18px;
+  display: block;
+  background-color: var(--color-primary);
+  mask-image: url('./search.svg');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-image: url('./search.svg');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
 }
 
 .input {
@@ -103,6 +112,6 @@
   }
 }
 
-:global([data-theme='dark']) .icon {
+:global([data-theme='dark']) .iconWrapper {
   color: var(--color-primary);
 }
