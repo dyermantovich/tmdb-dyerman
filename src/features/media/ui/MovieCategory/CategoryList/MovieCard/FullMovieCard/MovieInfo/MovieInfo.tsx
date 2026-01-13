@@ -1,15 +1,14 @@
-import { useGetMovieByIdQuery } from '@/features/media/api/mediaApi.ts';
-import { useParams } from 'react-router';
-import { skipToken } from '@reduxjs/toolkit/query';
 import s from './MovieInfo.module.css';
 import { Skeleton } from '@mui/material';
-import { getRating } from '@/features/media/ui';
+import { getRating } from '../../getRating.ts';
+import type { MovieResponse } from '@/common/types';
 
-export const MovieInfo = () => {
-  const { id } = useParams();
+type Props = {
+  data?: MovieResponse;
+  isFetching: boolean;
+};
 
-  const { data, isFetching } = useGetMovieByIdQuery(id ?? skipToken);
-
+export const MovieInfo = ({ data, isFetching }: Props) => {
   if (isFetching) {
     return (
       <section className={s.section}>
