@@ -45,5 +45,6 @@
 }
 
 .slider :global(.rc-slider-handle-dragging) {
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary), transparent 70%);
+  box-shadow: 0 0 0 4px
+    color-mix(in srgb, var(--color-primary), transparent 70%);
 }

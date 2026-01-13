@@ -6,7 +6,9 @@ export const appSlice = createSlice({
   initialState: {
     theme: localStorage.getItem('theme') as ThemeMode,
     status: 'notLiked' as MovieStatus,
-    favorites: JSON.parse(localStorage.getItem('favorite') ?? '[]') as FavoriteType[],
+    favorites: JSON.parse(
+      localStorage.getItem('favorite') ?? '[]',
+    ) as FavoriteType[],
   },
   selectors: {
     selectTheme: (state) => state.theme,

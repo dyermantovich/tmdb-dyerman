@@ -9,7 +9,8 @@
 .panel {
   padding: 22px;
   border-radius: 18px;
-  background: linear-gradient(
+  background:
+    linear-gradient(
       180deg,
       color-mix(in srgb, var(--color-primary), transparent 82%) 0%,
       color-mix(in srgb, var(--color-bg-default), transparent 0%) 100%
